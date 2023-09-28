@@ -15,12 +15,31 @@ class MyApp extends StatelessWidget {
 
     // final ThemeData themeData;
     
-  PreferredSizeWidget appBar = AppBar(
-    backgroundColor: Colors.black,
-    title: Text("Username", ),
-          centerTitle: true, // Centrar el texto
-          leading: Icon(Icons.person_rounded), // Icono a la izquierda
-        );
+  PreferredSizeWidget appBar =  AppBar(
+    backgroundColor: Colors.white,
+    title:const Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+            Icon(
+              Icons.person_rounded, color: Color.fromARGB(201, 66, 68, 64), size: 50.0,),
+            SizedBox(width: 30,),
+            Text("Username", 
+              style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+      ],
+    ),
+    
+    //  const Text("Username", 
+    //   style: TextStyle(color: Colors.black, fontSize: 32),
+    //  ),
+    // leadingWidth: 80,
+    // titleSpacing: 30,   // Centrar el 
+    // leading: const Icon(
+    //           Icons.person_rounded, color: Color.fromARGB(201, 66, 68, 64), size: 50.0,),
+    // leading:  // Icono a la izquierda
+    forceMaterialTransparency: true,
+    toolbarHeight: 100,
+  );
 
     
         
@@ -28,7 +47,7 @@ class MyApp extends StatelessWidget {
     //  title: const Row(
               
     //         children: [
-    //           Icon(Icons.person_rounded), // Replace with your desired icon
+    //           Icon(Icons.person_forounded), // Replace with your desired icon
              
     //           Expanded(child:Center(
     //             child: Text(
@@ -45,6 +64,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: appBar,
+      
       ),
 
     );
