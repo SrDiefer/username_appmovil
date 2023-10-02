@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // final ThemeData themeData;
     
   PreferredSizeWidget appBar =  AppBar(
     backgroundColor: Colors.white,
@@ -28,43 +27,50 @@ class MyApp extends StatelessWidget {
               ),
       ],
     ),
-    
-    //  const Text("Username", 
-    //   style: TextStyle(color: Colors.black, fontSize: 32),
-    //  ),
-    // leadingWidth: 80,
-    // titleSpacing: 30,   // Centrar el 
-    // leading: const Icon(
-    //           Icons.person_rounded, color: Color.fromARGB(201, 66, 68, 64), size: 50.0,),
-    // leading:  // Icono a la izquierda
     forceMaterialTransparency: true,
     toolbarHeight: 100,
   );
 
+  Widget filledButton = FilledButton.tonal(
+    onPressed: () {  },
+    style: const ButtonStyle(
+        shape: MaterialStatePropertyAll(LinearBorder.none)),
+    child: const Text('Cambiar Correo'),
+    );
     
-        
-    // toolbarHeight: 70.0,
-    //  title: const Row(
-              
-    //         children: [
-    //           Icon(Icons.person_forounded), // Replace with your desired icon
-             
-    //           Expanded(child:Center(
-    //             child: Text(
-    //               'Username'
-    //             ),
-    //           ),)// Add spacing between icon and text
-             
-    //         ],
-    //  ),
-   
+
+  
+
+
    
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        filledButtonTheme: const FilledButtonThemeData(style: ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll(Color.fromARGB(206, 230, 230, 230)),
+          fixedSize: MaterialStatePropertyAll(Size(300, 100)),
+          elevation: MaterialStatePropertyAll(5)
+
+          )
+        )
+      ),
       title: 'Username',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: appBar,
-      
+        body:
+        Center(
+          child: Column(children: 
+        [
+          filledButton,
+          const SizedBox(height: 30,),
+          filledButton,
+          const SizedBox(height: 100,)
+
+        ],
+        mainAxisAlignment: MainAxisAlignment.center,
+        ) ,
+        )  
       ),
 
     );
